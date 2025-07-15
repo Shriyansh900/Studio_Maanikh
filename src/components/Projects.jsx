@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { MapPin, Clock, Maximize, Tag, ArrowRight } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { projectsData } from "../data/projects";
+import Testimonials from "./Testimonials";
 
 const Projects = () => {
   const [currentFilter, setCurrentFilter] = useState("all");
@@ -178,6 +179,7 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+      <Testimonials/>
       </div>
     </section>
   );

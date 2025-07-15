@@ -60,7 +60,7 @@ const About = () => {
       name: "Sarah doe",
       role: "Founder & Creative Director",
       image:
-        "https://t3.ftcdn.net/jpg/02/95/44/22/360_F_295442295_OXsXOmLmqBUfZreTnGo9PREuAPSLQhff.jpg",
+        "https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg",
       experience: "15+ years",
       expertise: "Luxury Residential Design & Creative Direction",
       description:
@@ -70,7 +70,7 @@ const About = () => {
       name: "Michael Chen",
       role: "Senior Interior Designer",
       image:
-        "https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnVubnklMjBhbmltYWx8ZW58MHx8MHx8fDA%3D",
+        "https://images.pexels.com/photos/450214/pexels-photo-450214.jpeg",
       experience: "12+ years",
       expertise: "Sustainable Design & Modern Aesthetics",
       description:
@@ -80,7 +80,7 @@ const About = () => {
       name: "Emma Rodriguez",
       role: "Project Manager & Design Coordinator",
       image:
-        "https://thumbs.dreamstime.com/b/happy-young-pig-isolated-white-background-funny-animals-emotions-happy-young-pig-isolated-white-background-funny-animals-373186198.jpg",
+        "https://images.pexels.com/photos/3894377/pexels-photo-3894377.jpeg",
       experience: "8+ years",
       expertise: "Project Management & Client Relations",
       description:
