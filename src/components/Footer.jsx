@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-scroll";
 import {
   Instagram,
@@ -9,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="bg-gray-300 text-black dark:bg-slate-700 dark:text-white">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Brand */}
@@ -17,11 +16,11 @@ const Footer = () => {
             <h2 className="font-serif text-2xl font-bold mb-4">
               Studio<span className="text-accent-400">Maanikh</span>
             </h2>
-            <p className="text-gray-300 mb-6">
+            <p className="text-black dark:text-white font-light mb-6">
               Creating timeless, elegant spaces that reflect your unique
               lifestyle.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 ">
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -57,7 +56,7 @@ const Footer = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                  className="text-black dark:text-white  transition-colors cursor-pointer"
                 >
                   Home
                 </Link>
@@ -69,7 +68,7 @@ const Footer = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                  className="text-black dark:text-white  transition-colors cursor-pointer"
                 >
                   About
                 </Link>
@@ -81,7 +80,7 @@ const Footer = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                  className="text-black  dark:text-white   transition-colors cursor-pointer"
                 >
                   Projects
                 </Link>
@@ -93,19 +92,19 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-medium mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Residential Design</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Commercial Spaces</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Space Planning</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Furniture Selection</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Renovation Consulting</a>
               </li>
             </ul>
@@ -115,16 +114,16 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-medium mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">LinkedIn</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Facebook</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Instagram</a>
               </li>
-              <li className="text-gray-300 hover:text-white transition-colors">
+              <li className="text-black dark:text-white ">
                 <a href="#">Behance</a>
               </li>
             </ul>
@@ -133,7 +132,7 @@ const Footer = () => {
           {/* Newsletter */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-medium mb-4">Contact Info</h3>
-            <p className="text-gray-300 mb-4">
+            <p className="text-black dark:text-white mb-4">
               420/falana nagar , dhimkani street ,prithvi Gola
             </p>
           </div>
@@ -144,16 +143,16 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Studio Maanikh. All rights
             reserved.
           </p>
-          <Link
+          {/* <Link
             to="hero"
             spy={true}
             smooth={true}
             offset={-70}
             duration={500}
-            className="flex items-center text-gray-300 hover:text-white transition-colors cursor-pointer"
+            className="flex items-center text-gray-400  hover:text-white transition-colors cursor-pointer"
           >
             Back to Top <ArrowUp size={16} className="ml-1" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </footer>

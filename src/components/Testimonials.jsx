@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -102,7 +102,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section className="py-10 bg-white dark:bg-gray-900 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
@@ -123,13 +123,13 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Testimonials Container */}
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-4xl  mx-auto relative">
           {/* Navigation Arrows */}
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 z-10"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 md:-translate-x-8 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 z-10"
           >
             <ChevronLeft size={18} />
           </motion.button>
@@ -138,13 +138,13 @@ const Testimonials = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-8 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 z-10"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 md:translate-x-8 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 z-10"
           >
             <ChevronRight size={18} />
-          </motion.button>
+          </motion.button> */}
 
           {/* Testimonial Cards */}
-          <div className="relative h-48 md:h-40">
+          <div className="relative  min-h-[300px] md:min-h-[200px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentTestimonial}
@@ -155,42 +155,42 @@ const Testimonials = () => {
                   duration: 0.5,
                   ease: [0.25, 0.46, 0.45, 0.94]
                 }}
-                className="absolute inset-0 bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg"
+                className="absolute inset-0 bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 md:p-10 shadow-lg flex items-center justify-center"
               >
-                <div className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 h-full">
+                <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 w-full max-w-full">
                   {/* Client Image */}
                   <div className="flex-shrink-0">
                     <img
                       src={testimonials[currentTestimonial].image}
                       alt={testimonials[currentTestimonial].name}
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-3 border-white dark:border-gray-700 shadow-md"
+                      className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-3 border-white dark:border-gray-700 shadow-md"
                     />
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 text-center md:text-left">
                     {/* Stars */}
-                    <div className="flex items-center space-x-1 mb-3">
+                    <div className="flex items-center justify-center md:justify-start space-x-1 mb-3">
                       {renderStars(testimonials[currentTestimonial].rating)}
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed mb-4 italic">
+                    <blockquote className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed mb-4 italic px-2">
                       "{testimonials[currentTestimonial].text}"
                     </blockquote>
 
                     {/* Client Info */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-center md:justify-between text-center sm:text-left">
                       <div>
-                        <h4 className="font-semibold text-primary-800 dark:text-primary-200 text-sm">
+                        <h4 className="font-semibold text-primary-800 dark:text-primary-200 text-sm md:text-base">
                           {testimonials[currentTestimonial].name}
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400 text-xs">
+                        <p className="text-gray-600 dark:text-gray-400 text-xs md:text-sm">
                           {testimonials[currentTestimonial].role} • {testimonials[currentTestimonial].location}
                         </p>
                       </div>
                       <div className="mt-2 sm:mt-0">
-                        <span className="text-xs text-accent-600 dark:text-accent-400 font-medium bg-accent-50 dark:bg-accent-900/20 px-2 py-1 rounded-full">
+                        <span className="text-xs md:text-sm text-accent-600 dark:text-accent-400 font-medium bg-accent-50 dark:bg-accent-900/20 px-2 py-1 rounded-full">
                           {testimonials[currentTestimonial].project}
                         </span>
                       </div>
@@ -202,7 +202,7 @@ const Testimonials = () => {
           </div>
 
           {/* Indicators */}
-          <div className="flex items-center justify-center space-x-2 mt-6">
+          <div className="flex items-center  justify-center  space-x-2 mt-6">
             {testimonials.map((_, index) => (
               <motion.button
                 key={index}
@@ -218,7 +218,7 @@ const Testimonials = () => {
                 {index === currentTestimonial && (
                   <motion.div
                     layoutId="activeTestimonialIndicator"
-                    className="w-full h-full bg-primary-600 dark:bg-primary-400 rounded-full"
+                    className="w-full h-full  bg-primary-600 dark:bg-primary-400 rounded-full"
                     transition={{ 
                       type: "spring", 
                       bounce: 0.2, 
@@ -237,7 +237,7 @@ const Testimonials = () => {
           animate={inView ? "visible" : "hidden"}
           variants={fadeIn}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto"
         >
           {[
             { number: '100+', label: 'Happy Clients' },

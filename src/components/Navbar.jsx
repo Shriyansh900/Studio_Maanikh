@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { Menu, X, Home, User, Briefcase, Sparkles, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ThemeToggle';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import {
+  Menu,
+  X,
+  Home,
+  User,
+  Briefcase,
+  Sparkles,
+  ChevronDown,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const toggleMenu = () => {
@@ -24,70 +32,77 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { 
-      name: 'Home', 
-      to: 'hero', 
-      offset: -70, 
+    {
+      name: "Home",
+      to: "hero",
+      offset: -70,
       icon: Home,
-      description: 'Welcome & Hero'
+      description: "Welcome & Hero",
     },
-    { 
-      name: 'About', 
-      to: 'about', 
-      offset: -70, 
+    {
+      name: "About",
+      to: "about",
+      offset: -70,
       icon: User,
-      description: 'Our Story & Team'
+      description: "Our Story & Team",
     },
-    { 
-      name: 'Projects', 
-      to: 'projects', 
-      offset: -70, 
+    {
+      name: "Projects",
+      to: "projects",
+      offset: -70,
       icon: Briefcase,
-      description: 'Portfolio & Work'
+      description: "Portfolio & Work",
     },
+    // {
+    //   name: "Projects",
+    //   to: "projects",
+    //   offset: -70,
+    //   icon: Briefcase,
+    //   description: "Portfolio & Work",
+    // },
   ];
 
   const logoVariants = {
     initial: { scale: 1, rotate: 0 },
-    hover: { 
-      scale: 1.05, 
+    hover: {
+      scale: 1.05,
       rotate: [0, -2, 2, 0],
-      transition: { 
+      transition: {
         duration: 0.6,
         rotate: {
           repeat: Infinity,
           repeatType: "reverse",
-          duration: 2
-        }
-      }
-    }
+          duration: 2,
+        },
+      },
+    },
   };
 
   const navItemVariants = {
     initial: { y: 0, scale: 1 },
-    hover: { 
-      y: -2, 
+    hover: {
+      y: -2,
       scale: 1.05,
-      transition: { 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 10 
-      }
-    }
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10,
+      },
+    },
   };
 
   const glowVariants = {
     initial: { opacity: 0, scale: 0.8 },
-    hover: { 
-      opacity: 1, 
+    hover: {
+      opacity: 1,
       scale: 1.2,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   return (
@@ -98,8 +113,8 @@ const Navbar = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`fixed w-full z-50 transition-all duration-700 ${
           scrolled
-            ? 'bg-white/20 dark:bg-gray-900/80 backdrop-blur-xl shadow-2xl  border-white/20 dark:border-gray-700/30 py-2'
-            : 'bg-transparent py-4'
+            ? "bg-white/20 dark:bg-gray-900/80 backdrop-blur-xl shadow-2xl  border-white/20 dark:border-gray-700/30 py-2"
+            : "bg-transparent py-4"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -116,8 +131,8 @@ const Navbar = () => {
               <motion.div
                 variants={logoVariants}
                 initial="initial"
-                whileHover="hover"
-                className="flex items-center space-x-4"
+                 whileHover={{ scale: 1.1 }}
+                className="flex items-center space-x-2"
               >
                 <div className="relative">
                   {/* Animated background glow */}
@@ -127,67 +142,72 @@ const Navbar = () => {
                     whileHover="hover"
                     className="absolute -inset-2 bg-gradient-to-r from-primary-500 via-accent-500 to-gold-500 rounded-2xl blur-lg opacity-30"
                   />
-                  
+
                   {/* Main logo container */}
-                  <div className="relative w-12 h-12 bg-gradient-to-br from-primary-600 via-accent-600 to-gold-600 rounded-xl flex items-center justify-center shadow-xl overflow-hidden">
+                  <div className="relative w-12 h-12  rounded-xl flex items-center justify-center shadow-xl overflow-hidden">
                     {/* Animated background pattern */}
-                    <motion.div
-                      animate={{ 
+                    {/* <motion.div
+                      animate={{
                         background: [
-                          "linear-gradient(45deg, #b3906a, #5e7f6e)",
-                          "linear-gradient(45deg, #5e7f6e, #cb8f36)",
-                          "linear-gradient(45deg, #cb8f36, #b3906a)"
-                        ]
+                          "linear-gradient(45deg, #1F1F1F, #D4AF37)", // Charcoal black to rich gold
+                          "linear-gradient(45deg, #D4AF37, #EAE7DC)", // Gold to off-white/ivory
+                          "linear-gradient(45deg, #EAE7DC, #1F1F1F)", // Ivory to black
+                        ],
                       }}
-                      transition={{ duration: 3, repeat: Infinity }}
+                      transition={{ duration: 2, repeat: Infinity }}
                       className="absolute inset-0"
-                    />
-                    
+                    /> */}
+
                     {/* Logo text */}
-                    <motion.span 
-                      className="relative text-white font-bold text-xl z-10"
-                      animate={{ 
+                    <motion.span
+                      className="relative  text-gray-400 dark:text-yellow-400 font-bold text-xl z-10"
+                      animate={{
                         textShadow: [
                           "0 0 10px rgba(255,255,255,0.5)",
                           "0 0 20px rgba(255,255,255,0.8)",
-                          "0 0 10px rgba(255,255,255,0.5)"
-                        ]
+                          "0 0 10px rgba(255,255,255,0.5)",
+                        ],
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      M
+                      SM
                     </motion.span>
-                    
+
                     {/* Sparkle effect */}
-                    <motion.div
-                      animate={{ 
+                    {/* <motion.div
+                      animate={{
                         rotate: 360,
-                        scale: [1, 1.2, 1]
+                        scale: [1, 1.2, 1],
                       }}
-                      transition={{ 
-                        rotate: { duration: 4, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 2, repeat: Infinity }
+                      transition={{
+                        rotate: {
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "linear",
+                        },
+                        scale: { duration: 2, repeat: Infinity },
                       }}
                       className="absolute top-1 right-1"
                     >
                       <Sparkles size={8} className="text-white/70" />
-                    </motion.div>
+                    </motion.div> */}
                   </div>
                 </div>
-                
+
                 <div className="relative">
-                  <motion.h1 
-                    className="font-serif text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-800 via-accent-700 to-gold-700 dark:from-primary-200 dark:via-accent-300 dark:to-gold-300 bg-clip-text text-transparent"
+                  <motion.h1
+                    className="font-serif text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-200 via-accent-300 to-gold-300 dark:from-amber-100 dark:via-amber-300 dark:to-yellow-400 bg-clip-text text-transparent"
+
                     animate={{
-                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                     }}
                     transition={{ duration: 3, repeat: Infinity }}
                     style={{ backgroundSize: "200% 200%" }}
                   >
                     Studio Maanikh
                   </motion.h1>
-                  <motion.p 
-                    className="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wider uppercase"
+                  <motion.p
+                    className="text-xs text-slate-300 dark:text-white font-extrabold tracking-wider uppercase"
                     animate={{ opacity: [0.7, 1, 0.7] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -203,7 +223,7 @@ const Navbar = () => {
                 const IconComponent = item.icon;
                 const isActive = activeSection === item.to;
                 const isHovered = hoveredItem === item.name;
-                
+
                 return (
                   <motion.div
                     key={item.name}
@@ -227,53 +247,59 @@ const Navbar = () => {
                         whileHover="hover"
                         onHoverStart={() => setHoveredItem(item.name)}
                         onHoverEnd={() => setHoveredItem(null)}
-                        className={`relative px-6 py-3 mx-1 rounded-2xl font-medium transition-all duration-500 cursor-pointer group flex items-center space-x-3 ${
+                        className={`relative  px-3 py-2 mx-1  rounded-2xl font-medium transition-all duration-500 cursor-pointer group flex items-center  text-black space-x-3 ${
                           isActive
-                            ? 'text-white bg-gradient-to-r from-primary-600 via-accent-600 to-gold-600 shadow-2xl'
-                            : 'text-gray-700 dark:text-gray-300 hover:text-white'
+                            ? "bg-gradient-to-r from-amber-200 to-yellow-500  "
+                            : "text-slate-300 dark:text-gray-300 hover:text-white"
                         }`}
                       >
                         {/* Animated background for non-active items */}
                         {!isActive && (
                           <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ 
+                            animate={{
                               opacity: isHovered ? 1 : 0,
-                              scale: isHovered ? 1 : 0.8
+                              scale: isHovered ? 1 : 0.8,
                             }}
                             transition={{ duration: 0.3 }}
                             className="absolute inset-0 bg-gradient-to-r from-primary-500/20 via-accent-500/20 to-gold-500/20 rounded-2xl backdrop-blur-sm"
                           />
                         )}
-                        
+
                         {/* Glow effect for active item */}
                         {isActive && (
                           <motion.div
-                            animate={{ 
+                            animate={{
                               boxShadow: [
                                 "0 0 20px rgba(179, 144, 106, 0.5)",
                                 "0 0 40px rgba(94, 127, 110, 0.7)",
-                                "0 0 20px rgba(203, 143, 54, 0.5)"
-                              ]
+                                "0 0 20px rgba(203, 143, 54, 0.5)",
+                              ],
                             }}
                             transition={{ duration: 2, repeat: Infinity }}
                             className="absolute inset-0 rounded-2xl"
                           />
                         )}
-                        
+
                         {/* Icon with animation */}
                         <motion.div
-                          animate={isActive ? { 
-                            rotate: [0, 10, -10, 0],
-                            scale: [1, 1.1, 1]
-                          } : {}}
+                          animate={
+                            isActive
+                              ? {
+                                  rotate: [0, 10, -10, 0],
+                                  scale: [1, 1.1, 1],
+                                }
+                              : {}
+                          }
                           transition={{ duration: 0.5 }}
                         >
                           <IconComponent size={18} className="relative z-10" />
                         </motion.div>
-                        
-                        <span className="relative z-10 font-semibold">{item.name}</span>
-                        
+
+                        <span className="relative z-10 font-semibold">
+                          {item.name}
+                        </span>
+
                         {/* Hover tooltip */}
                         <AnimatePresence>
                           {isHovered && !isActive && (
@@ -294,7 +320,7 @@ const Navbar = () => {
                   </motion.div>
                 );
               })}
-              
+
               {/* Enhanced Theme Toggle */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -318,10 +344,14 @@ const Navbar = () => {
               >
                 {/* Animated background */}
                 <motion.div
-                  animate={isOpen ? { scale: 1.2, opacity: 0.8 } : { scale: 1, opacity: 0.3 }}
+                  animate={
+                    isOpen
+                      ? { scale: 1.2, opacity: 0.8 }
+                      : { scale: 1, opacity: 0.3 }
+                  }
                   className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500"
                 />
-                
+
                 <AnimatePresence mode="wait">
                   {isOpen ? (
                     <motion.div
@@ -366,12 +396,12 @@ const Navbar = () => {
               className="fixed inset-0 bg-black/60 backdrop-blur-md z-40 lg:hidden"
               onClick={toggleMenu}
             />
-            
+
             {/* Enhanced Mobile Menu */}
             <motion.div
-              initial={{ x: '100%', opacity: 0 }}
+              initial={{ x: "100%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              exit={{ x: '100%', opacity: 0 }}
+              exit={{ x: "100%", opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed top-0 right-0 h-full w-80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl z-50 lg:hidden border-l border-white/20 dark:border-gray-700/30"
             >
@@ -386,7 +416,9 @@ const Navbar = () => {
                       <h2 className="font-serif text-lg font-bold text-primary-800 dark:text-primary-200">
                         Studio Maanikh
                       </h2>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Interior Design Studio</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        Interior Design Studio
+                      </p>
                     </div>
                   </div>
                   <motion.button
@@ -424,14 +456,16 @@ const Navbar = () => {
                               whileTap={{ scale: 0.98 }}
                               className="flex items-center space-x-4 py-4 px-4 rounded-2xl text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-primary-50 hover:via-accent-50 hover:to-gold-50 dark:hover:from-primary-900/30 dark:hover:via-accent-900/30 dark:hover:to-gold-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-all duration-300 cursor-pointer group border border-transparent hover:border-primary-200/50 dark:hover:border-primary-700/50"
                             >
-                              <motion.div 
+                              <motion.div
                                 className="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-primary-600 group-hover:to-accent-600 group-hover:text-white transition-all duration-300 shadow-md"
                                 whileHover={{ rotate: 5 }}
                               >
                                 <IconComponent size={20} />
                               </motion.div>
                               <div className="flex-1">
-                                <span className="font-semibold text-lg block">{item.name}</span>
+                                <span className="font-semibold text-lg block">
+                                  {item.name}
+                                </span>
                                 <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600/70 dark:group-hover:text-primary-400/70">
                                   {item.description}
                                 </p>
@@ -441,7 +475,10 @@ const Navbar = () => {
                                 whileHover={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <ChevronDown size={16} className="rotate-[-90deg] text-gray-400" />
+                                <ChevronDown
+                                  size={16}
+                                  className="rotate-[-90deg] text-gray-400"
+                                />
                               </motion.div>
                             </motion.div>
                           </Link>
@@ -452,7 +489,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Enhanced Mobile Footer */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
@@ -466,18 +503,21 @@ const Navbar = () => {
                       {[0, 1, 2].map((i) => (
                         <motion.div
                           key={i}
-                          animate={{ 
+                          animate={{
                             scale: [1, 1.2, 1],
-                            opacity: [0.5, 1, 0.5]
+                            opacity: [0.5, 1, 0.5],
                           }}
-                          transition={{ 
-                            duration: 2, 
+                          transition={{
+                            duration: 2,
                             repeat: Infinity,
-                            delay: i * 0.3
+                            delay: i * 0.3,
                           }}
                           className={`w-3 h-3 rounded-full ${
-                            i === 0 ? 'bg-primary-400' : 
-                            i === 1 ? 'bg-accent-400' : 'bg-gold-400'
+                            i === 0
+                              ? "bg-primary-400"
+                              : i === 1
+                              ? "bg-accent-400"
+                              : "bg-gold-400"
                           }`}
                         />
                       ))}
