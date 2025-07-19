@@ -72,14 +72,14 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="max-w-4xl mx-auto"
         >
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-lg md:text-xl font-medium text-white/90 mb-4"
           >
             Welcome to 
-          </motion.h2>
+          </motion.h2> */}
 
           {/* SplitText Animates Only Once */}
           <SplitText

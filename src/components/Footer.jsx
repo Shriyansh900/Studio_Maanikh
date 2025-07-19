@@ -4,6 +4,7 @@ import {
   Facebook,
   Pointer as Pinterest,
   ArrowUp,
+  Linkedin,
 } from "lucide-react";
 
 const Footer = () => {
@@ -13,36 +14,37 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h2 className="font-serif text-2xl font-bold mb-4">
-              Studio<span className="text-accent-400">Maanikh</span>
+            <h2 className="font-serif mb-4  dark:text-yellow-400 font-bold text-2xl">
+              Studio Maanikh
             </h2>
             <p className="text-black dark:text-white font-light mb-6">
               Creating timeless, elegant spaces that reflect your unique
               lifestyle.
             </p>
-            <div className="flex space-x-4 ">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Pinterest"
-              >
-                <Pinterest size={18} />
-              </a>
-            </div>
+<div className="flex space-x-4">
+  <a
+    href="https://www.instagram.com/studiomaanikh?utm_source=ig_web_button_share_sheet&igsh=YmU1Y2tsdHVvbHF2"
+    aria-label="Instagram"
+    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center  hover:text-[#E4405F] hover:bg-white/20 transform transition-all duration-300 hover:scale-110"
+  >
+    <Instagram size={18} />
+  </a>
+  <a
+    href="#"
+    aria-label="Facebook"
+    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center  hover:text-[#1877F2] hover:bg-white/20 transform transition-all duration-300 hover:scale-110"
+  >
+    <Facebook size={18} />
+  </a>
+  <a
+    href="#"
+    aria-label="LinkedIn"
+    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center  hover:text-[#0A66C2] hover:bg-white/20 transform transition-all duration-300 hover:scale-110"
+  >
+    <Linkedin size={18} />
+  </a>
+</div>
+
           </div>
 
           {/* Quick Links */}
@@ -112,7 +114,7 @@ const Footer = () => {
 
           {/* Get in Touch */}
           <div className="md:col-span-1">
-            <h3 className="text-lg font-medium mb-4">Services</h3>
+            <h3 className="text-lg font-medium mb-4">Connect</h3>
             <ul className="space-y-2">
               <li className="text-black dark:text-white ">
                 <a href="#">LinkedIn</a>
@@ -122,9 +124,6 @@ const Footer = () => {
               </li>
               <li className="text-black dark:text-white ">
                 <a href="#">Instagram</a>
-              </li>
-              <li className="text-black dark:text-white ">
-                <a href="#">Behance</a>
               </li>
             </ul>
           </div>

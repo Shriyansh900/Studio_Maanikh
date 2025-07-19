@@ -89,7 +89,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="bg-white dark:bg-gray-900">
+    <section id="about" className="bg-white dark:bg-slate-800">
       {/* Hero Section */}
       <div
         ref={refHero}
@@ -133,7 +133,7 @@ const About = () => {
             className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
             <div>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-300 dark:text-gray-600 mb-8">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-black  dark:text-yellow-400 mb-8">
                 Nikhil Kachawa
               </h2>
               <div className="mb-6">
